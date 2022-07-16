@@ -2,19 +2,25 @@ package functions;
 import java.util.Scanner;
 
 public class functions {
-    public static String[] table() {
-        double[] array = new double[80];
-        String[] game = new String[80];
+    double RNG = 0.0;
+    double[] array = new double[80];
+    String[] game = new String[80];
+    public functions(){
+
+    }
+    public String[] getArray(){
+        return this.game;
+    }
+
+
+    public String[] table() {
         Scanner In = new Scanner(System.in);
-        double RNG = 0.0
-        while (In.hasNext()) {
-            int x = In.nextInt(0);
-            int y = In.nextInt(1);
-        }
+            int x = In.nextInt();
+            int y = In.nextInt();
         if (RNG == 0.0) {
-            RNG = Math.random();
             for (int i = 0; i < array.length; i++) {
-                array[i] = RNG = Math.random();
+                RNG = Math.random();
+                array[i] = RNG;
             }
         } else {
             for (int n = 0; n < array.length; n++) {
