@@ -1,31 +1,33 @@
 package functions;
+
 import java.util.Scanner;
 
 public class functions {
-    private static double RNG = 0.0;
+    double RNG = 0.0;
+    String[] array = new String[80];
+    public functions(){
 
-    public static String[] table() {
-        double[] array = new double[80];
-        String[] game = new String[80];
-        Scanner In = new Scanner(System.in);
-        while (In.hasNext()) {
-            int x = In.nextInt(0);
-            int y = In.nextInt(1);
-        }
+    }
+    public String[] getArray(){
+        return this.array;
+    }
+
+
+    public String[] table() {
         if (RNG == 0.0) {
-            RNG = Math.random();
             for (int i = 0; i < array.length; i++) {
-                array[i] = RNG = Math.random();
-            }
-        } else {
-            for (int n = 0; n < array.length; n++) {
-                if (array[n] < 0.12) {
-                    game[n] = "m";
-                } else {
-                    game[n] = "s";
-                }
+                RNG = Math.random();
+                if (RNG < 0.12) {array[i] = "☢";}
+                else {array[i] = "⬜";}
             }
         }
-        return game;
+        Scanner In = new Scanner(System.in);
+        int value = In.nextInt();
+        int ones = Math.abs(value%10);
+        int tens = (value-ones)/10;
+        System.out.println(tens+" "+ones);
+        return array;
     }
 }
+//⬛
+//✪
