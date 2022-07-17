@@ -1,3 +1,4 @@
+
 import functions.*;
 
 
@@ -8,12 +9,12 @@ public class run {
         String[] game = new String[80];
         game = run_game.table();
         for (int i=0; i < run_game.getArray().length; i++) {
-            if (i % 9 == 0){
+            if (i % 10 == 0){
                 System.out.println();
             }
             else{
-            System.out.print(i+" ");
-        }}
-
+            System.out.print(game[i] +" ");
+        }
+        }
     }
 }
