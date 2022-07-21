@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class run {
     public static void main(String[]args){
         functions run_game = new functions();
@@ -7,7 +8,8 @@ public class run {
             String[] game = new String[80];
             String[] screen = new String[80];
             game = run_game.table();
-            screen = run_game.screen();
+            Scanner scan = new Scanner(System.in);
+            screen = run_game.screen(scan);
                 for (int i=0; i < run_game.getArray().length; i++) {
                     if (i % 10 == 0){
                         System.out.println();
@@ -15,7 +17,9 @@ public class run {
                     else{
                         System.out.print(screen[i] +" ");
                         }
+
                 }
+            System.out.println("Power ups: "+run_game.getpwrs());
         }
 
     }
